@@ -1,7 +1,9 @@
 name: Check trains for new builds
 on:
   schedule:
-    - cron: "30 * * * *"
+    - cron: "*/30 * * * *"
+  workflow_dispatch
+  
 env:
   ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
   HEADERS: ${{ secrets.HEADERS }}
