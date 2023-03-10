@@ -2,7 +2,7 @@ name: Check trains for new builds
 on:
   schedule:
     - cron: "*/30 * * * *"
-  workflow_dispatch
+  workflow_dispatch:
   
 env:
   ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
@@ -19,6 +19,7 @@ jobs:
       - uses: actions/setup-node@v3
       - uses: actions/cache@v3
         with:
+          key: node_modules
           path: node_modules
       - run: npm i
       - run: npm run build
