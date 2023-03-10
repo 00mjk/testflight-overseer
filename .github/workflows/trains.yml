@@ -1,0 +1,26 @@
+name: Check trains for new builds
+on:
+  schedule:
+    - cron: "30 * * * *"
+env:
+  ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
+  HEADERS: ${{ secrets.HEADERS }}
+  WEBHOOK: ${{ secrets.WEBHOOK }}
+
+jobs:
+  check-trains:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - uses: actions/cache@v3
+        with:
+          path: node_modules
+      - run: npm i
+      - run: npm run build
+      - run: node .
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update builds"

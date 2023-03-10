@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node16",
+        "allowSyntheticDefaultImports": true,
+        "importHelpers": true,
+        "resolveJsonModule": true,
+        "rootDir": "src",
+        "outDir": "dist",
+        "sourceMap": true,
+        "lib": [
+            "es2020"
+        ],
+        "skipLibCheck": true
+    },
+    "include": [
+        "src"
+    ]
+}
