@@ -97,7 +97,7 @@ for (const train of trains.data.reverse()) {
 
     if (!dataTrain) {
         dataTrains.push(train);
-    } else {
+    } else if (train.buildCount > dataTrain.buildCount) {
         dataTrain.buildCount = train.buildCount
     }
 }
