@@ -50,5 +50,9 @@
     {
         "trainVersion": "170.0",
         "buildCount": 9
+    },
+    {
+        "trainVersion": "171.0",
+        "buildCount": 1
     }
 ]
